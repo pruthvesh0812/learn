@@ -1,0 +1,352 @@
+
+Admin@pruthveshShetkar MINGW64 ~
+$ cd desktop/project
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git add names.txt
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   names.txt
+
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git commit -m "names.txt file is added"
+[master (root-commit) c7c65e7] names.txt file is added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 names.txt
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ vi names.txt
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ cat names.txt
+pruthvesh shetkar is learning teaching git now
+and all of his students are enjoying the learning process
+
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git add .
+warning: LF will be replaced by CRLF in names.txt.
+The file will have its original line endings in your working directory
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git add .
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   names.txt
+
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git restore --staged names.txt
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ gitgitgit
+bash: gitgitgit: command not found
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git add names.txt
+warning: LF will be replaced by CRLF in names.txt.
+The file will have its original line endings in your working directory
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   names.txt
+
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git commit -m "file has been modified"
+[master 0a82ae5] file has been modified
+ 1 file changed, 3 insertions(+)
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git log
+commit 0a82ae5f842baa39405be84278b33e3e8034500e (HEAD -> master)
+Author: pruthvesh <pruthveshshetkar@gmail.com>
+Date:   Mon Jan 31 17:08:45 2022 +0530
+
+    file has been modified
+
+commit c7c65e7f8084144395398bf27ab4d377824f9273
+Author: pruthvesh <pruthveshshetkar@gmail.com>
+Date:   Mon Jan 31 16:56:11 2022 +0530
+
+    names.txt file is added
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ rm -rf names.txt
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git add .
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git commit -m "the file names.txt has been deleted"
+[master aa5b1c6] the file names.txt has been deleted
+ 1 file changed, 3 deletions(-)
+ delete mode 100644 names.txt
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git log
+commit aa5b1c627e8dba5960e1a6944d669ca45bc73f2a (HEAD -> master)
+Author: pruthvesh <pruthveshshetkar@gmail.com>
+Date:   Mon Jan 31 17:16:27 2022 +0530
+
+    the file names.txt has been deleted
+
+commit 0a82ae5f842baa39405be84278b33e3e8034500e
+Author: pruthvesh <pruthveshshetkar@gmail.com>
+Date:   Mon Jan 31 17:08:45 2022 +0530
+
+    file has been modified
+
+commit c7c65e7f8084144395398bf27ab4d377824f9273
+Author: pruthvesh <pruthveshshetkar@gmail.com>
+Date:   Mon Jan 31 16:56:11 2022 +0530
+
+    names.txt file is added
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ ^C
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git reset c7c65e7f8084144395398bf27ab4d377824f9273
+Unstaged changes after reset:
+D       names.txt
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git log
+commit c7c65e7f8084144395398bf27ab4d377824f9273 (HEAD -> master)
+Author: pruthvesh <pruthveshshetkar@gmail.com>
+Date:   Mon Jan 31 16:56:11 2022 +0530
+
+    names.txt file is added
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git add .
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    names.txt
+
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$  git stash
+Saved working directory and index state WIP on master: c7c65e7 names.txt file is added
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ touch  surnames.txt
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        surnames.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ vi surnames.txt
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        surnames.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ cat surnames.txt
+shetkar
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git add .
+warning: LF will be replaced by CRLF in surnames.txt.
+The file will have its original line endings in your working directory
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ touch house.txt
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   surnames.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        house.txt
+
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ vim house.txt
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git add .
+warning: LF will be replaced by CRLF in house.txt.
+The file will have its original line endings in your working directory
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   house.txt
+        new file:   surnames.txt
+
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git stash
+Saved working directory and index state WIP on master: c7c65e7 names.txt file is added
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git log
+commit c7c65e7f8084144395398bf27ab4d377824f9273 (HEAD -> master)
+Author: pruthvesh <pruthveshshetkar@gmail.com>
+Date:   Mon Jan 31 16:56:11 2022 +0530
+
+    names.txt file is added
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git stash pop
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   house.txt
+        new file:   surnames.txt
+
+Dropped refs/stash@{0} (8640b951a594d9386c4b2d8c11b99ffd43bd7a61)
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   house.txt
+        new file:   surnames.txt
+
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git stash clear
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   house.txt
+        new file:   surnames.txt
+
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git statsh
+git: 'statsh' is not a git command. See 'git --help'.
+
+The most similar command is
+        stash
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git stash
+Saved working directory and index state WIP on master: c7c65e7 names.txt file is added
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git stash clear
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git remote add origin https://github.com/pruthvesh0812/learn.git
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 221 bytes | 55.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/pruthvesh0812/learn.git
+ * [new branch]      master -> master
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
+$ ^C
+
+Admin@pruthveshShetkar MINGW64 ~/desktop/project (master)
